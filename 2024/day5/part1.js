@@ -1,50 +1,35 @@
-const input = `47|53
-97|13
-97|61
-97|47
-75|29
-61|13
-75|53
-29|13
-97|29
-53|29
-61|53
-97|53
-61|29
-47|13
-75|47
-97|75
-47|61
-75|61
-47|29
-75|13
-53|13
+const fs = require("fs");
 
-75,47,61,53,29
-97,61,53,29,13
-75,29,13
-75,97,47,61,53
-61,13,29
-97,13,75,29,47`;
-
-const arr = input.split("\n\n");
-const rules = [...arr[0].split("\n")];
-const updatedRules = rules.map((rule) => {
-  const [key, value] = rule.split("|").map(Number);
-  return [ key, value ];
-});
-const updates = arr[1].split("\n");
-console.log("rules : ", updatedRules);
-
-// const updatedUpdates = [];
-// updates.forEach((update) => {
-  
-//   updatedUpdates.push([key, value]);
-// });
-// console.log("updated : ", updatedUpdates);
+function parseInput(inputData) {
+    
+    const sections = inputData.trim().split("\n\n");
+    console.log(sections.length)
+    if (sections.length < 2) {
+        throw new Error("Input data is not formatted correctly. Missing sections.");
+    }
+    
+    // Parse rules
+    const rules = sections[0].split("\n").map(line => {
+        const [x, y] = line.split('|').map(Number);
+        return [x, y];
+    });
+    
+    // Parse updates
+    const updates = sections[1].split("\n").map(update => update.split(',').map(Number));
+    
+    return { rules, updates };
+}
 
 
-const m = ['75,47,61,53,29'];
-const updatedM = m.map((x) => x.split(',').map(Number));
-console.log("updatedM : ", updatedM[0]);
+try {
+    const input = fs.readFileSync("data.txt", '').replace(/\r/g, "");
+    if (!input) {
+        throw new Error("File is empty or could not be read.");
+    }
 
+    const { rules, updates } = parseInput(input);
+    console.log("Rules:", rules);
+    console.log("Updates:", updates);
+} catch (error) {
+    console.error("Error:", error.message);
+}
