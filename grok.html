@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <footer id="footerWrapper">
+      <div class="footer-content">
+        <div class="contact-info">1600 K St NW | Suite 350</div>
+        <div class="contact-info">Washington, D.C. 20006</div>
+        <div class="contact-info">202-659-0699</div>
+        <div class="org-link-div">aahivm.org</div>
+      </div>
+    </footer>
+
+    <style>
+      #footerWrapper {
+        background-color: #d32f2f; /* Red background */
+        color: white; /* White text color */
+        padding: 10px 0; /* Padding for the footer */
+        text-align: center; /* Center align the text */
+      }
+
+      .footer-content {
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+      }
+
+      .contact-info {
+        margin: 0 15px; /* Spacing between contact info items */
+        font-size: 16px; /* Font size for contact info */
+      }
+
+      .org-link-div {
+        background-color: #5e35b1; /* Purple background for the link section */
+        padding: 10px 20px; /* Padding for the link section */
+        margin-left: 20px; /* Space between the last contact info and the link */
+        border-top-left-radius: 10px; /* Rounded top left corner */
+        border-bottom-left-radius: 10px; /* Rounded bottom left corner */
+      }
+
+      .org-link {
+        color: white; /* White text color for the link */
+        text-decoration: none; /* Remove underline from the link */
+        font-size: 16px; /* Font size for the link */
+      }
+
+      /* Pseudo-element for the white triangle */
+      .org-link-div::before {
+        content: "";
+        position: absolute;
+        left: -20px; /* Position the triangle to the left of the link section */
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent; /* Adjust height to match the link section height */
+        border-bottom: 30px solid transparent; /* Adjust height to match the link section height */
+        border-right: 20px solid #5e35b1; /* Purple border to create the triangle */
+      }
+    </style>
+  </body>
+</html>

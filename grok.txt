@@ -1,0 +1,231 @@
+To achieve the design shown in the mockup footer using CSS, you can apply the following styles to the HTML structure provided:
+
+```css
+#footerWrapper {
+    background-color: #d32f2f; /* Red background for the left section */
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.contact-info {
+    margin-right: 20px;
+}
+
+.org-link-div {
+    background-color: #5e35b1; /* Dark purple background for the right section */
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.org-link {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adding a white diagonal stripe for decoration */
+#footerWrapper::before {
+    content: '';
+    position: absolute;
+    left: 60%; /* Adjust this to move the stripe left or right */
+    top: 0;
+    bottom: 0;
+    width: 40px; /* Adjust width as needed */
+    background: white;
+    transform: skew(15deg); /* Adjust skew to change angle */
+    z-index: 1;
+}
+```
+
+This CSS does the following:
+
+- Sets the main footer (`#footerWrapper`) to have a red background, white text, and uses flexbox for layout.
+- The `.footer-content` is styled to distribute space between its children, ensuring the contact info and the org link are spaced out.
+- The `.contact-info` elements are given some right margin to space them out from each other.
+- The `.org-link-div` is given a dark purple background, positioned absolutely on the right, and its height is set to match its parent's height.
+- The `.org-link` is styled to remove the underline and set the color to white.
+- A pseudo-element (`::before`) is used on `#footerWrapper` to create a white diagonal stripe for visual interest. Adjust the `left` property to move it horizontally and `transform` for the angle.
+
+This should give you a footer that closely matches the design in your mockup, with the diagonal separator and the color scheme as depicted. Adjust the values as needed for exact positioning and sizes.
+
+
+
+
+
+
+To achieve the design shown in the mockup footer with the provided HTML structure, you can use the following CSS:
+
+```css
+#footerWrapper {
+    background-color: #d32f2f; /* Red background */
+    color: white; /* White text color */
+    padding: 10px 0; /* Padding for the footer */
+    text-align: center; /* Center align the text */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.contact-info {
+    margin: 0 15px; /* Spacing between contact info items */
+    font-size: 16px; /* Font size for contact info */
+}
+
+.org-link-div {
+    background-color: #5e35b1; /* Purple background for the link section */
+    padding: 10px 20px; /* Padding for the link section */
+    margin-left: 20px; /* Space between the last contact info and the link */
+    border-top-left-radius: 10px; /* Rounded top left corner */
+    border-bottom-left-radius: 10px; /* Rounded bottom left corner */
+}
+
+.org-link {
+    color: white; /* White text color for the link */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 16px; /* Font size for the link */
+}
+
+/* Pseudo-element for the white triangle */
+.org-link-div::before {
+    content: '';
+    position: absolute;
+    left: -20px; /* Position the triangle to the left of the link section */
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent; /* Adjust height to match the link section height */
+    border-bottom: 30px solid transparent; /* Adjust height to match the link section height */
+    border-right: 20px solid #5e35b1; /* Purple border to create the triangle */
+}
+```
+
+This CSS will style the footer to match the design in the mockup:
+
+- The footer has a red background with white text.
+- The contact information is centered and spaced evenly.
+- The link section has a purple background with a white triangle on the left side to create the angled effect.
+- The link text is white and without underline.
+
+Make sure to adjust the `padding`, `margin`, and `font-size` values as needed to fit your specific design requirements.
+
+
+
+
+
+
+
+Certainly! To run a similar simulation for a population of 337,107,632 people, you can modify the `num_of_simulations` variable in the Python script to match this number. Here is the updated script:
+
+```python
+#!/usr/bin/env python3
+
+import random
+
+num_of_simulations = 337_107_632
+trump_wins = 0
+kamala_wins = 0
+
+for _ in range(num_of_simulations):
+    if random.randint(0, 1) == 0:
+        trump_wins += 1
+    else:
+        kamala_wins += 1
+
+print(f"{num_of_simulations:,} simulations were run.")
+print(f"Trump wins {trump_wins:,} times")
+print(f"Kamala wins {kamala_wins:,} times")
+
+trump_pct = (trump_wins / num_of_simulations) * 100
+kamala_pct = 100 - trump_pct
+
+if trump_pct == kamala_pct:
+    print("Result: It's a tie, wtf?")
+elif trump_pct > 50:
+    print(f"Result: Trump wins - probability: {trump_pct:.3f}%")
+else:
+    print(f"Result: Kamala wins - probability: {kamala_pct:.3f}%")
+```
+
+You can run this script in your terminal by saving it to a file (e.g., `run_simulation.py`) and then executing it with Python:
+
+```bash
+python run_simulation.py
+```
+
+This will simulate the election for 337,107,632 people and output the results. Note that running this simulation with such a large number of iterations will take a considerable amount of time and computational resources. If you want to test it with a smaller subset, you can adjust the `num_of_simulations` to a smaller number and then extrapolate the results.
+
+
+
+
+
+
+Sure, I can help you modify the simulation to account for a population of 337,107,632 people. Here's how you can adjust the Python script:
+
+1. **Update the number of simulations**: Since the population is quite large, you might want to run more simulations to get a more accurate result. Let's set the number of simulations to match the population size.
+
+2. **Initialize variables**: Keep track of wins for each candidate.
+
+3. **Run the simulation**: For each person in the population, simulate their vote.
+
+4. **Calculate and print the results**: Compute the percentage of wins and print the results.
+
+Here's the updated script:
+
+```python
+import random
+
+num_of_simulations = 337_107_632
+trump_wins = 0
+kamala_wins = 0
+
+for _ in range(num_of_simulations):
+    if random.random() < 0.5:  # Assuming a 50/50 chance for simplicity
+        trump_wins += 1
+    else:
+        kamala_wins += 1
+
+print(f"{num_of_simulations} simulations were run.")
+print(f"Trump wins {trump_wins} times")
+print(f"Kamala wins {kamala_wins} times")
+
+trump_pct = (trump_wins / num_of_simulations) * 100
+kamala_pct = 100 - trump_pct
+
+if trump_pct == kamala_pct:
+    print("Result: It's a tie, wtf?")
+elif trump_pct > 50:
+    print(f"Result: Trump wins - probability: {trump_pct:.3f}%")
+else:
+    print(f"Result: Kamala wins - probability: {kamala_pct:.3f}%")
+```
+
+To run this script:
+
+1. Save the script to a file, for example, `run_simulation_population.py`.
+2. Open a terminal or command prompt.
+3. Navigate to the directory where the script is saved.
+4. Run the script using Python:
+
+```sh
+python run_simulation_population.py
+```
+
+This script assumes that each person in the population has an equal chance of voting for either candidate. You can adjust the probability in the `random.random()` condition if you have specific probabilities for each candidate.
