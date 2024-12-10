@@ -1,0 +1,27 @@
+1. Define the problem Space 
+- ask lots of questions 
+-functional/non functional requirements
+-who the user is business/normal people
+-estimating data, data requirements
+
+
+2. Design the system at a high level
+- APIs Design
+- Diagramming
+
+
+3. Deep dive into the system Design
+- how non functional requirements are important
+- databases design
+- load balancers
+
+
+4. Identify the bottlenecks and scaling oppurtunities
+-edge cases , peak time
+- horizontal sharding, cdn, caching, load balancers, rate  limiting
+- sql vs nosql
+
+
+5. Review and wrap up
+- test cases
+
