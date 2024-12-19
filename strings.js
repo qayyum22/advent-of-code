@@ -1,0 +1,54 @@
+let str = "Hello World, My name is Qayyum";
+let arr = str.split(" ");
+console.log(arr);
+
+// Commonly used string methods
+console.log(str.charAt(0));
+console.log(str.charCodeAt(0));
+console.log(str.concat(" How are you?"));
+console.log(str.endsWith("Qayyum"));
+console.log(str.includes("World"));
+console.log(str.indexOf("World"));
+console.log(str.lastIndexOf("o"));
+console.log(str.localeCompare("hello world, my name is qayyum"));
+console.log(str.match(/World/));
+console.log(str.matchAll(/o/g));
+console.log(str.normalize());
+console.log(str.padEnd(30, "."));
+console.log(str.padStart(30, "."));
+console.log(str.repeat(2));
+console.log(str.replace("World", "Universe"));
+console.log(str.replaceAll("o", "0"));
+console.log(str.search("World"));
+console.log(str.slice(0, 5));
+console.log(str.split(" "));
+console.log(str.startsWith("Hello"));
+console.log(str.substring(0, 5));
+console.log(str.toLocaleLowerCase());
+console.log(str.toLocaleUpperCase());
+console.log(str.toLowerCase());
+console.log(str.toString());
+console.log(str.toUpperCase());
+console.log(str.trim());
+console.log(str.trimEnd());
+console.log(str.trimStart());
+console.log(str.valueOf());
+
+// Additional string methods
+console.log(str.codePointAt(0));
+console.log(String.fromCharCode(72, 101, 108, 108, 111));
+console.log(String.fromCodePoint(72, 101, 108, 108, 111));
+console.log(String.raw`Hello\nWorld`);
+console.log(str.anchor("anchor"));
+console.log(str.big());
+console.log(str.blink());
+console.log(str.bold());
+console.log(str.fixed());
+console.log(str.fontcolor("red"));
+console.log(str.fontsize(7));
+console.log(str.italics());
+console.log(str.link("https://example.com"));
+console.log(str.small());
+console.log(str.strike());
+console.log(str.sub());
+console.log(str.sup());
